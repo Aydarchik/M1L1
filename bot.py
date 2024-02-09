@@ -1,6 +1,8 @@
 from bot_logic import gen_pass
 from rnumber import r_number
 import discord
+import random
+
 
 # Переменная intents - хранит привилегии бота
 intents = discord.Intents.default()
@@ -8,6 +10,9 @@ intents = discord.Intents.default()
 intents.message_content = True
 # Создаем бота в переменной client и передаем все привелегии
 client = discord.Client(intents=intents)
+
+
+
 
 @client.event
 async def on_ready():
@@ -25,7 +30,15 @@ async def on_message(message):
         await message.channel.send(gen_pass(8))
     elif message.content.startswith('!номер любой'):
         await message.channel.send(r_number(1))
+    elif message.content.startswith('!СТОП'):
+        await message.channel.send('СТООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООП')
     else:
         await message.channel.send(message.content)
+    
+async def joined(ctx, member: discord.Member):
+    """Says when a member joined."""
+    await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
 
-client.run('')
+
+
+client.run('MTIwMTA2Nzg4MDY5NjAwNDczMA.GJ0RfL.rZ0gZ4zkQzwrw7T2lNpT7J186FOKfwxi5uZ72A')
