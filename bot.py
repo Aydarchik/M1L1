@@ -41,4 +41,4 @@ async def joined(ctx, member: discord.Member):
 
 
 
-client.run('MTIwMTA2Nzg4MDY5NjAwNDczMA.GJ0RfL.rZ0gZ4zkQzwrw7T2lNpT7J186FOKfwxi5uZ72A')
+client.run('')
