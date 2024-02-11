@@ -34,7 +34,8 @@ async def on_message(message):
         await message.channel.send('СТООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООП')
     else:
         await message.channel.send(message.content)
-    
+        
+@bot.command()    
 async def joined(ctx, member: discord.Member):
     """Says when a member joined."""
     await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
