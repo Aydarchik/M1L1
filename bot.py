@@ -1,5 +1,3 @@
-from bot_logic import gen_pass
-from rnumber import r_number
 import discord
 from discord.ext import commands
 import os
@@ -23,12 +21,22 @@ async def heh(ctx, count_heh = 5):
     await ctx.send("he" * count_heh)
 @bot.command()
 async def mem(ctx):
-    images = os.listdir('images')
-    img_name = random.choice(images)
-    with open(f'images/{img_name}', 'rb') as f:
-        # В переменную кладем файл, который преобразуется в файл библиотеки Discord!
-        picture = discord.File(f)
+    images1 = os.listdir('m2_l1/images')
+    img_name = random.choice(images1)
+    with open(f'm2_l1/images/{img_name}', 'rb') as f:
+            picture = discord.File(f)
    # Можем передавать файл как параметр!
     await ctx.send(file=picture)
+@bot.command()
+async def randomN(ctx):
+    n = random.randint(1, 100)
+    await ctx.send(n)
+@bot.command()
+async def stop(ctx):
+    await ctx.send('СТОООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООООО')
+@bot.command()
+async def joined(ctx, member: discord.Member):
+    """Says when a member joined."""
+    await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
 
 bot.run("")
