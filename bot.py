@@ -21,9 +21,9 @@ async def heh(ctx, count_heh = 5):
     await ctx.send("he" * count_heh)
 @bot.command()
 async def mem(ctx):
-    images1 = os.listdir('m2_l1/images')
+    images1 = os.listdir('images')
     img_name = random.choice(images1)
-    with open(f'm2_l1/images/{img_name}', 'rb') as f:
+    with open(f'images/{img_name}', 'rb') as f:
             picture = discord.File(f)
    # Можем передавать файл как параметр!
     await ctx.send(file=picture)
