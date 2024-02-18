@@ -38,9 +38,7 @@ async def stop(ctx):
 async def joined(ctx, member: discord.Member):
     """Says when a member joined."""
     await ctx.send(f'{member.name} joined {discord.utils.format_dt(member.joined_at)}')
-@bot.command()
-async def hello(ctx):
-    await ctx.send(f'Hello {ctx.author.name}!')
+
 
 @bot.command()
 async def ping(ctx):
@@ -49,9 +47,9 @@ async def ping(ctx):
 @bot.command()
 async def echo(ctx, *, message: str):
     await ctx.send(message)
+
 @bot.command()
-async def randomN(ctx):
-    n = random.randint(1, 100)
-    await ctx.send(n)
+async def SendPepe(ctx):
+    await ctx.send("https://imgur.com/gallery/fB2m0gd")
 
 bot.run("") 
