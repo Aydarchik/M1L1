@@ -23,4 +23,4 @@ async def mems(ctx):
 async def sos(ctx):
     await ctx.send('молодец ты сдал мусор напиши команду $mem и тебе выдаст смешную картинку с мусором')
     
-bot.run('MTIwMTA2Nzg4MDY5NjAwNDczMA.GJx89A.Sl9popMVKUd3Rahti72UIwAPNA2q0-C50r6Txs')
+bot.run('')
